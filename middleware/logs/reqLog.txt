@@ -1,0 +1,4 @@
+20220404	11:28:43	6138810d-c50e-4b58-a26f-78702edc64a0	GET	undefined	/
+20220404	11:28:43	fcdc5ef6-3847-4691-b403-6a652168d881	GET	undefined	/css/style.css
+20220404	11:28:43	55694231-c225-4d64-9b4e-5fc3cfc6fe21	GET	undefined	/favicon.ico
+20220404	11:28:44	3bb94c07-8721-4639-884f-22e3f38e3bdf	GET	undefined	/favicon.ico

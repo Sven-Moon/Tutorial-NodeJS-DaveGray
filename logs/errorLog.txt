@@ -1,0 +1,2 @@
+20220401	14:08:03	9c9dd084-d048-4af2-9c8f-e7271741c201	Error	EISDIR: illegal operation on a directory, read
+20220401	14:08:27	71a95cdd-616f-4b0c-b587-6808feced79e	Error	EISDIR: illegal operation on a directory, read
