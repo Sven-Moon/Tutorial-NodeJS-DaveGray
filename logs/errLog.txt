@@ -1,3 +1,6 @@
 20220404	11:59:23	3c39bbff-3f7c-422a-8d39-f7eeacc8b49e	Error: Not allowed by CORS
 20220404	11:59:23	cdffc51e-0ddb-4220-be6b-12c9c43467d4	Error: Not allowed by CORS
 20220404	11:59:24	de4b55df-bcad-466a-8496-e1af73b8995f	Error: Not allowed by CORS
+20220418	19:30:08	ca6498bb-8360-42cf-893a-6d5f86d9feca	Error: ENOENT: no such file or directory, stat 'C:\Users\svenp\Coding Projects\Tutorials\nodejs\views\routes\index.html'
+20220418	20:42:01	f437b747-043a-4f13-a17a-c78e5abcf4d1	Error: ENOENT: no such file or directory, stat 'C:\Users\svenp\Coding Projects\Tutorials\nodejs\views\subdir\new-page.html'
+20220418	21:09:32	e0d00f1b-8813-457b-855d-73b81971e234	TypeError: req.json is not a function

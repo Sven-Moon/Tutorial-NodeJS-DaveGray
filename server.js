@@ -39,56 +39,16 @@ app.use(cors(corsOptions));
 app.use(express.urlencoded({ extended: false }));
 // handles NOT form json data
 app.use(express.json());
+
 // serve static files (such as css)
 app.use(express.static(path.join(__dirname, "./public")));
-
-// define routes
-// ROOT
-// regex evals to "/" or "/index.html" or "/index"
-app.get("^/$|/index(.html)?", (req, res) => {
-  // method 1 (preferred)
-  res.sendFile(path.join(__dirname, "views", "index.html"));
-  // method 2
-  // res.sendFile("./views/index.html", { root: __dirname });
-});
-// new-page
-app.get("/new-page.html", (req, res) => {
-  res.sendFile(path.join(__dirname, "views", "new-page.html"));
-});
-// old-page redirect
-app.get("/old-page(.html)?", (req, res) => {
-  res.redirect(301, "/new-page.html"); // 302 by default
-});
+// adds the static files usage when in the subdir route
+app.use("/subdir", express.static(path.join(__dirname, "./public")));
 
 // ROUTE HANDLERS
-app.get(
-  "/hello(.html)?",
-  (req, res, next) => {
-    console.log("attempted to load hello.html");
-    next();
-  },
-  // the 'next' handler is triggered on next()
-  (req, res) => {
-    res.send("Hey you");
-  }
-);
-
-const one = (req, res, next) => {
-  console.log("one");
-  next();
-};
-
-const two = (req, res, next) => {
-  console.log("two");
-  next();
-};
-
-const three = (req, res, next) => {
-  console.log("three");
-  res.send("Finished");
-};
-
-app.get("/chain(.html)?", [one, two, three]);
+app.use("/", require("./routes/root"));
+app.use("/subdir", require("./routes/subdir"));
+app.use("/employees", require("./routes/api/employees"));
 
 // app.use('/')
 app.all("*", (req, res) => {
