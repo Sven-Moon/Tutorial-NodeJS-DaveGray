@@ -5,33 +5,14 @@ const path = require("path");
 const cors = require("cors");
 const { logger } = require("./middleware/logEvents");
 const errorHandler = require("./middleware/errorHandler");
+const corsOptions = require("./config/corsOptions");
 
 const PORT = process.env.PORT || 3500;
 
 // MIDDLEWARE
 // cusom middleware logger
 app.use(logger);
-// Cross Origin Resource Sharing
-const whitelist = [
-  "https://www.yoursite.com",
-  "http://127.0.0.1:5500", // localhost public ip
-  "http://localhost:3500",
-];
-const corsOptions = {
-  // origin parameter is whoever requested (ex: google.com)
-  origin: (origin, callback) => {
-    // if the domain is in the whitelist
-    // '!origin' equiv to 'undefined', necessary b/c localhost doesn't serve an origin REMOVE AFTER DEVELOPMENT
-    if (whitelist.indexOf(origin) !== -1 || !origin) {
-      // callback(error, origin_sent_back?)
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
-  optionsSuccessStatus: 200,
-};
-// leaving this open is fine for a public API
+
 app.use(cors(corsOptions));
 
 // .use() applies middleware to all incoming routes
