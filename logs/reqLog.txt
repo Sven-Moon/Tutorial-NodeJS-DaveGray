@@ -153,3 +153,11 @@
 20220419	17:32:41	31232aa8-afbf-4572-96d7-c7aa3ab461f7	GET	undefined	/employees/css/style.css
 20220419	17:33:50	4cd0cf6a-4603-44fe-a7d1-ea27227c497a	GET	undefined	/employees/1
 20220419	17:33:54	91b3a278-5cea-4b68-ac8a-5afb15fc270e	GET	undefined	/employees/2
+20220419	21:37:34	a815ab60-75d6-4e55-b061-0c429a938e38	POST	undefined	/register
+20220419	21:38:15	edb159b8-8c40-4a5c-8223-3b11bbe83004	POST	undefined	/register
+20220419	21:40:44	ab645136-3b33-4d18-98f4-521a2172557e	POST	undefined	/register
+20220419	21:41:43	e1d88f31-126e-4ce2-be0a-6f12e84ef018	POST	undefined	/register
+20220419	21:41:49	78bbc145-1aaa-44b2-b80d-e54944ce8931	POST	undefined	/register
+20220423	14:09:45	4e00ea69-149e-4ebe-9544-e781cf9f0c1c	POST	undefined	/register
+20220423	14:10:14	92fbe609-e3f1-49d2-946c-a7c435f46d60	POST	undefined	/register
+20220423	14:10:41	070e1fa9-4987-426e-824d-8e73f322ad4b	POST	undefined	/register

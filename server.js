@@ -10,7 +10,7 @@ const corsOptions = require("./config/corsOptions");
 const PORT = process.env.PORT || 3500;
 
 // MIDDLEWARE
-// cusom middleware logger
+// custom middleware logger
 app.use(logger);
 
 app.use(cors(corsOptions));
@@ -26,8 +26,9 @@ app.use(express.static(path.join(__dirname, "./public")));
 // adds the static files usage when in the subdir route
 app.use("/subdir", express.static(path.join(__dirname, "./public")));
 
-// ROUTE HANDLERS
+// ROUTES
 app.use("/", require("./routes/root"));
+app.use("/register", require("./routes/register"));
 app.use("/subdir", require("./routes/subdir"));
 app.use("/employees", require("./routes/api/employees"));
 

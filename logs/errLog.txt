@@ -4,3 +4,4 @@
 20220418	19:30:08	ca6498bb-8360-42cf-893a-6d5f86d9feca	Error: ENOENT: no such file or directory, stat 'C:\Users\svenp\Coding Projects\Tutorials\nodejs\views\routes\index.html'
 20220418	20:42:01	f437b747-043a-4f13-a17a-c78e5abcf4d1	Error: ENOENT: no such file or directory, stat 'C:\Users\svenp\Coding Projects\Tutorials\nodejs\views\subdir\new-page.html'
 20220418	21:09:32	e0d00f1b-8813-457b-855d-73b81971e234	TypeError: req.json is not a function
+20220419	21:41:43	3e8e1109-f785-4463-8554-993990a8d322	SyntaxError: Unexpected token } in JSON at position 28
