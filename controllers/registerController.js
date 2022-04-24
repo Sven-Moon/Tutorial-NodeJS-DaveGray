@@ -24,7 +24,11 @@ const handleNewUser = async (req, res) => {
       10 // salt rounds (prevents a compromised database from allowing
     ); // intruders getting all passwords from a single hash break)
     // store the new user
-    const newUser = { username: user, password: hashedPwd };
+    const newUser = {
+      username: user,
+      password: hashedPwd,
+      roles: { User: 2001 },
+    };
     usersDB.setUsers([...usersDB.users, newUser]);
     // probably wouldn't write to file like this with real db
     await fsPromises.writeFile(

@@ -5,3 +5,9 @@
 20220418	20:42:01	f437b747-043a-4f13-a17a-c78e5abcf4d1	Error: ENOENT: no such file or directory, stat 'C:\Users\svenp\Coding Projects\Tutorials\nodejs\views\subdir\new-page.html'
 20220418	21:09:32	e0d00f1b-8813-457b-855d-73b81971e234	TypeError: req.json is not a function
 20220419	21:41:43	3e8e1109-f785-4463-8554-993990a8d322	SyntaxError: Unexpected token } in JSON at position 28
+20220424	11:44:40	3627da80-1a37-4e70-9403-af51f719a22d	TypeError: Cannot read properties of undefined (reading 'find')
+20220424	11:47:24	75296303-d30b-4ed9-89f4-71c4a753c750	TypeError: Assignment to constant variable.
+20220424	11:48:11	caa9f77e-4831-43b5-8615-eaf1fbac414b	TypeError: Cannot set properties of undefined (setting 'content-type')
+20220424	11:49:58	4926e25a-dd73-43ab-bbc7-17ed65725fa2	TypeError: Cannot set properties of undefined (setting 'content-type')
+20220424	12:08:11	7956d3fb-d95b-4d6f-8750-2f7a3a7030fd	TypeError: Cannot set properties of undefined (setting 'content-type')
+20220424	12:09:44	98f97198-9fe0-4852-bae4-21bba70f97d1	TypeError: Cannot set properties of undefined (setting 'content-type')

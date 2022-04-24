@@ -23,12 +23,20 @@ const handleLogin = async (req, res) => {
   // eval password
   const match = await bcrypt.compare(pwd, foundUser.password);
   if (match) {
+    // get codes (not decrypted values) to send
+    const roles = Object.values(foundUser.roles);
     // create JWT
     const accessToken = jwt.sign(
-      { username: foundUser.username },
+      {
+        UserInfo: {
+          username: foundUser.username,
+          roles: roles,
+        },
+      },
       process.env.ACCESS_TOKEN_SECRET,
       { expiresIn: "30s" } // production would be 5 - 5 min
     );
+    // refreshToken doesn't need roles, just there for new accessToken
     const refreshToken = jwt.sign(
       { username: foundUser.username },
       process.env.REFRESH_TOKEN_SECRET,
@@ -37,7 +45,7 @@ const handleLogin = async (req, res) => {
     // save refresh token to DB -- allows for token inval. on logout
     // will also be used to cross-reference to create a new accessToken
     const otherUsers = usersDB.users.filter(
-      (person) => person.user !== foundUser.username
+      (person) => person.username !== foundUser.username
     );
     const currentUser = { ...foundUser, refreshToken };
     usersDB.setUsers([...otherUsers, currentUser]);
