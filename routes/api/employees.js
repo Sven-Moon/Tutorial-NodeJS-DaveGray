@@ -1,15 +1,15 @@
 const express = require("express");
 const router = express.Router();
-const empleesController = require("../../controllers/employeesController");
+const employeesController = require("../../controllers/employeesController");
 
 router
   .route("/")
-  .get(empleesController.getAllEmployees)
-  .post(empleesController.createNewEmployee)
-  .put(empleesController.updateEmployee)
-  .delete(empleesController.deleteEmployee);
+  .get(employeesController.getAllEmployees)
+  .post(employeesController.createNewEmployee)
+  .put(employeesController.updateEmployee)
+  .delete(employeesController.deleteEmployee);
 
 // route with parameter(s)
-router.route("/:id").get(empleesController.getEmployee);
+router.route("/:id").get(employeesController.getEmployee);
 
 module.exports = router;
