@@ -239,3 +239,5 @@
 20220424	12:14:46	f2b8eb5e-b68b-437e-a10c-d764e208f767	DELETE	undefined	/employees
 20220424	12:17:48	ddbd2527-3345-4c2d-8b54-bfa44cf7a954	POST	undefined	/auth
 20220424	12:17:50	94d09047-3b77-49e0-be40-8c23ab760736	GET	undefined	/refresh
+20220428	11:50:59	04b2672b-c4ff-4a9a-983d-a33c423c3c26	POST	undefined	/register
+20220428	11:51:47	8b7a59f8-e5f6-4d3d-a14d-955f60035afb	POST	undefined	/register
