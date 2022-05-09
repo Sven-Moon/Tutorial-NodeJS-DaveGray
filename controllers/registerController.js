@@ -23,7 +23,6 @@ const handleNewUser = async (req, res) => {
     // newUser.username = user
     // const result = await newUser.save()
     // end other ways
-    console.log(result); // *dev
 
     res.status(201).json({ success: `New user ${user} created!` });
   } catch {

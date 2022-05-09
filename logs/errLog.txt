@@ -11,3 +11,5 @@
 20220424	11:49:58	4926e25a-dd73-43ab-bbc7-17ed65725fa2	TypeError: Cannot set properties of undefined (setting 'content-type')
 20220424	12:08:11	7956d3fb-d95b-4d6f-8750-2f7a3a7030fd	TypeError: Cannot set properties of undefined (setting 'content-type')
 20220424	12:09:44	98f97198-9fe0-4852-bae4-21bba70f97d1	TypeError: Cannot set properties of undefined (setting 'content-type')
+20220509	08:49:29	fb9bf0d3-88f9-49d8-b59f-75e80c55125e	SyntaxError: Unexpected token c in JSON at position 13
+20220509	08:50:41	8218b9e3-799a-42fa-a935-ce18f22223d5	SyntaxError: Unexpected token c in JSON at position 13

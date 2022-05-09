@@ -1,14 +1,6 @@
-const usersDB = {
-  users: require("../model/users.json"),
-  setUsers: function (data) {
-    this.users = data;
-  },
-};
+const User = require("../model/User");
 const bcrypt = require("bcrypt");
-
 const jwt = require("jsonwebtoken");
-const fsPromises = require("fs").promises;
-const path = require("path");
 
 const handleLogin = async (req, res) => {
   const { user, pwd } = req.body;
@@ -17,13 +9,13 @@ const handleLogin = async (req, res) => {
       .status(400)
       .json({ message: "Username & password are required." });
   // find user
-  const foundUser = usersDB.users.find((person) => person.username === user);
+  const foundUser = await User.findOne({ username: user }).exec();
   if (!foundUser) return res.sendStatus(401); // unauthorized
   // eval password
   const match = await bcrypt.compare(pwd, foundUser.password);
   if (match) {
     // get codes (not decrypted values) to send
-    const roles = Object.values(foundUser.roles);
+    const roles = Object.values(foundUser.roles).filter(Boolean);
     // create JWT
     const accessToken = jwt.sign(
       {
@@ -43,15 +35,9 @@ const handleLogin = async (req, res) => {
     );
     // save refresh token to DB -- allows for token inval. on logout
     // will also be used to cross-reference to create a new accessToken
-    const otherUsers = usersDB.users.filter(
-      (person) => person.username !== foundUser.username
-    );
-    const currentUser = { ...foundUser, refreshToken };
-    usersDB.setUsers([...otherUsers, currentUser]);
-    await fsPromises.writeFile(
-      path.join(__dirname, "..", "model", "users.json"),
-      JSON.stringify(usersDB.users)
-    );
+    foundUser.refreshToken = refreshToken;
+    const result = await foundUser.save();
+
     // send tokens to user
     // refresh token sent via httpOnly cookie
     res.cookie("jwt", refreshToken, {
@@ -59,7 +45,7 @@ const handleLogin = async (req, res) => {
       httpOnly: true, // httpOnly cookies are NOT available to JS
       maxAge: 24 * 60 * 60 * 1000, // 1 day
       sameSite: "None",
-      secure: true,
+      // secure: true,
     });
     // accessToken may be sent as simple json
     res.json({ accessToken });
